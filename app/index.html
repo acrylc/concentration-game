@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Concentration Game</title>
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body>
+<!-- 
+<div id='title'>
+	<span>Hey you</span>
+	<span>ABOUT</span>
+	<span>F</span>
+</div>
+ -->
+ 	<div id='game-intro'>
+
+ 		<!-- <h1>Remember</h1> -->
+ 		<h2>Have you ever forgotten the name of the person you're talking to?</h2>
+
+ 		<div id='intro-animation'>
+ 			<div id='me'>
+	 			<div id='s1' class='speak'>Hey, erm...</div>
+	 			<div id='s2' class='speak'>Hey, you!</div>
+	 			<div id='s6' class='speak'>Right...</div>
+ 			</div>
+ 			<div id='bob'>
+	 			<div id='s3' class='speak'>Its Bob.</div>
+	 			<div id='s4' class='speak'>We work in the <br>same company.</div>
+	 			<div id='s5' class='speak'>We shared <br>tacos once...</div>
+ 			</div>
+ 		</div>
+
+ 		<h3>Highschool reunion, work party, anything, we've got you covered!
+ 		<br>
+ 		 <div id="linkedin">
+ 		 	<script type="IN/Login"></script>
+ 		 	<p>Login with Linkedin</p>
+ 		 </div>
+ 		</h3>
+
+ 	</div>
+	<div id='game-container'>
+
+		<div id='container'></div>
+
+
+		<div id='stats'>
+			
+
+			<h1>How well do you know your contacts?</h1>
+
+			<div id='sub-head'>
+				<span>Points</span>
+			</div>
+
+			<!-- <br> -->
+
+			<div class='stat'>
+				<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.2" baseProfile="tiny" id="Layer_1" x="0px" y="0px" width="30px" height="100px" viewBox="0 0 100 100" xml:space="preserve">
+				<path d="M100,39.332c0-3.332-2.636-6.029-5.935-6.169c0.004-0.012,0.004-0.024,0.009-0.035H65.461L55.863,4.341  c-0.004,0-0.009,0.001-0.014,0.001C55.058,1.833,52.738,0,49.967,0c-2.938,0-5.384,2.048-6.023,4.789  c-0.007-0.001-0.015,0-0.021-0.002l-9.45,28.341H6.336c-0.048-0.001-0.092-0.014-0.139-0.014C2.773,33.113,0,35.888,0,39.31  c0,1.884,0.857,3.55,2.185,4.687c-0.007,0.01-0.011,0.021-0.019,0.031L26.24,62.535l-8.961,28.683  c-0.364,0.789-0.582,1.659-0.582,2.587c0,3.422,2.775,6.195,6.198,6.195c1.405,0,2.687-0.484,3.727-1.272  c0.011,0.01,0.025,0.017,0.036,0.026L50.027,80.84l22.536,17.317C73.688,99.294,75.245,100,76.97,100  c3.424,0,6.198-2.773,6.198-6.195c0-0.748-0.154-1.456-0.397-2.121c0.016-0.002,0.029-0.01,0.045-0.012l-9.077-29.016l23.718-18.332  c-0.002-0.001-0.005-0.003-0.007-0.005C98.988,43.192,100,41.386,100,39.332z"/  id='star'>
+				</svg>
+				<span id='completed'>0</span>
+			</div>
+			
+			<div class='stat'>
+
+				<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+					 width="30px" height="100px" viewBox="0 0 99.999 100" enable-background="new 0 0 99.999 100" xml:space="preserve">
+				<path fill="#010101" d="M15.673,13.641C-4.403,32.595-5.313,64.235,13.641,84.312c0.333,0.354,0.672,0.702,1.016,1.044
+					c19.523,19.524,51.178,19.524,70.699,0c19.524-19.521,19.524-51.175,0-70.699C66.231-4.484,35.349-4.935,15.673,13.641z
+					 M25.262,35.16l9.898-9.898l14.847,14.847l14.847-14.847l9.898,9.898L59.905,50.012l14.848,14.842l-9.898,9.898L50.007,59.905
+					L35.16,74.752l-9.898-9.898l14.847-14.842L25.262,35.16z"/ id='error'>
+				</svg>
+				<span id='errors'>0</span>
+			</div>
+
+			<!-- <br>  -->
+
+			<div id='sub-head'>
+				<span>Select Level</span>
+			</div>
+
+			<div id='game-options'>
+				<div id='level1' class='game-mode' data-mode=0>1</div>
+				<div id='level2' class='game-mode' data-mode=1>2</div>
+				<div id='level3' class='game-mode' data-mode=2>3</div>
+			</div>
+
+	</div>
+
+	</div>
+
+	<footer>
+		made with <img src='images/heart.png'> and <img src='images/coffee.png'>, <a href='http://www.mayakreidieh.com'> <strong>@acrylc</strong> </a>
+	</footer>
+
+		<script type='text/template' id='name-card'>
+				<div class='card isactive'>
+					<div class='side front' style='background-color:<%-color%>'>
+					</div>
+					<div class='side back'>
+						<p><%=name%></p>
+					</div>
+				</div>
+		</script>
+
+
+	<script type='text/template' id='picture-card'>
+			<div class='card isactive'>
+				<div class='side front' style='background-color:<%-color%>'>
+				</div>
+				<div class='side back'>
+					<img src='<%-url%>'>
+				</div>
+			</div>
+	</script>
+
+	<script src='bower_components/jquery/dist/jquery.min.js'></script>
+	<script src='bower_components/underscore/underscore.js'></script>
+	<!-- <script src='bower_components/randomColor/randomColor.js'></script> -->
+	<!-- <script src='bower_components/react/react.min.js'></script> -->
+	<!-- <script src="bower_components/react/JSXTransformer.js"></script> -->
+	<!-- <script type='text/jsx' src='scripts/app.jsx'></script> -->
+	<script src='scripts/utils.js'></script>
+	<script src='scripts/app.js'></script>
+	<script src='scripts/game.js'></script>
+	<script src='scripts/user.js'></script>
+	<script src='scripts/main.js'></script>
+	<!-- <script type="IN/Login"></script> -->
+	<script type="text/javascript" src="http://platform.linkedin.com/in.js">
+		api_key : 77ghxmhm0qajm4
+		onLoad : app.init
+	</script>
+
+</body>
+</html>
